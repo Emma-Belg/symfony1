@@ -11,13 +11,18 @@
 <div class="example-wrapper">
     <h1>Hello {{ controller_name }}! ✅</h1>
 
+    <form action="{{ path('logged_in') }}"  method="post">
+        <label>Please type your name
+        <input name="name" type="text">
+            <input type="submit">
+        </label>
+
+    </form>
     This friendly message is coming from:
     <ul>
         <li>Your controller at <code><a href="{{ '/var/www/symfony1/src/Controller/LearningController.php'|file_link(0) }}">src/Controller/LearningController.php</a></code></li>
         <li>Your template at <code><a href="{{ '/var/www/symfony1/templates/learning/index.html.twig'|file_link(0) }}">templates/learning/index.html.twig</a></code></li>
     </ul>
-    <p>
-        {{ controller_text }}
-    </p>
+
 </div>
 {% endblock %}

@@ -15,8 +15,7 @@ class LearningController extends AbstractController
     {
         $user = new AboutMe();
         return $this->render('learning/index.html.twig', [
-            'controller_name' => $user->getName(),
-            'controller_text' => $user->getText()
+            'controller_name' => $user->showMyName(),
         ]);
     }
 }
