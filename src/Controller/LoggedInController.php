@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class LoggedInController extends AbstractController
 {
     /**
-     * @Route("/logged_in", name="logged_in")
+     * @Route("/logged_in", name="logged_in", methods={ "POST"})
      */
     public function index()
     {

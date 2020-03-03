@@ -6,6 +6,8 @@ use Symfony\Component\HttpFoundation\Request;
 
 require dirname(__DIR__).'/config/bootstrap.php';
 
+session_start();
+
 if ($_SERVER['APP_DEBUG']) {
     umask(0000);
 
@@ -25,3 +27,18 @@ $request = Request::createFromGlobals();
 $response = $kernel->handle($request);
 $response->send();
 $kernel->terminate($request, $response);
+
+
+function whatIsHappening()
+{
+    echo '<h2>$_GET</h2>';
+    var_dump($_GET);
+    echo '<h2>$_POST</h2>';
+    var_dump($_POST);
+    echo '<h2>$_COOKIE</h2>';
+    var_dump($_COOKIE);
+    echo '<h2>$_SESSION</h2>';
+    var_dump($_SESSION);
+}
+
+whatIsHappening();

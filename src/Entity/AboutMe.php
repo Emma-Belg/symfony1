@@ -32,7 +32,15 @@ class AboutMe
     {
         if(isset($_POST["name"]))
         {
+            $_SESSION["name"] = $_POST["name"];
             $this->name = $_POST["name"];
+        }
+        elseif (isset($_SESSION["name"]))
+        {
+            $this->name = $_SESSION["name"];
+        }
+        else {
+            $this->name = $this->showMyName();
         }
         return $this->name;
     }
